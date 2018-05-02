@@ -44,383 +44,7 @@
       ]
     }
   ],
-  "paths": {
-    "/apps/{appId}/metrics/{metricId}": {
-      "get": {
-        "operationId": "GetMetric",
-        "summary": "Retrieve metric data",
-        "description": "Gets data for a single metric.",
-        "x-ms-examples": {
-          "simpleMetric": {
-            "$ref": "examples/metric-get.json"
-          },
-          "intervaledMetric": {
-            "$ref": "examples/metric-get-full.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/metricId"
-          },
-          {
-            "$ref": "#/parameters/metricsTimespan"
-          },
-          {
-            "$ref": "#/parameters/metricsInterval"
-          },
-          {
-            "$ref": "#/parameters/metricsAggregation"
-          },
-          {
-            "$ref": "#/parameters/metricsSegment"
-          },
-          {
-            "$ref": "#/parameters/metricsTop"
-          },
-          {
-            "$ref": "#/parameters/metricsOrderBy"
-          },
-          {
-            "$ref": "#/parameters/metricsFilter"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/metricsResult"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/metrics": {
-      "post": {
-        "operationId": "GetMetrics",
-        "summary": "Retrieve metric data",
-        "description": "Gets metric values for multiple metrics",
-        "x-ms-examples": {
-          "postMetric": {
-            "$ref": "examples/metric-post.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/metricsPostBody"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/metricsResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/metrics/metadata": {
-      "get": {
-        "operationId": "GetMetricsMetadata",
-        "summary": "Retrieve metric metatadata",
-        "description": "Gets metadata describing the available metrics",
-        "x-ms-examples": {
-          "metricMetadata": {
-            "$ref": "examples/metrics-get-metadata.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "type": "object"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/events/{eventType}": {
-      "get": {
-        "operationId": "GetEvents",
-        "summary": "Execute OData query",
-        "description": "Executes an OData query for events",
-        "x-ms-examples": {
-          "eventByType": {
-            "$ref": "examples/events-get-by-type.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/eventType"
-          },
-          {
-            "$ref": "#/parameters/eventsTimespan"
-          },
-          {
-            "$ref": "#/parameters/eventsFilter"
-          },
-          {
-            "$ref": "#/parameters/eventsSearch"
-          },
-          {
-            "$ref": "#/parameters/eventsOrderBy"
-          },
-          {
-            "$ref": "#/parameters/eventsSelect"
-          },
-          {
-            "$ref": "#/parameters/eventsSkip"
-          },
-          {
-            "$ref": "#/parameters/eventsTop"
-          },
-          {
-            "$ref": "#/parameters/eventsFormat"
-          },
-          {
-            "$ref": "#/parameters/eventsCount"
-          },
-          {
-            "$ref": "#/parameters/eventsApply"
-          }
-        ],
-        "produces": [
-          "application/json;odata=none",
-          "application/json;odata=minimal",
-          "application/json;odata=full"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/eventsResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/events/{eventType}/{eventId}": {
-      "get": {
-        "operationId": "GetEvent",
-        "summary": "Get an event",
-        "description": "Gets the data for a single event",
-        "x-ms-examples": {
-          "eventById": {
-            "$ref": "examples/events-get-by-id.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/eventType"
-          },
-          {
-            "$ref": "#/parameters/eventsTimespan"
-          },
-          {
-            "$ref": "#/parameters/eventId"
-          }
-        ],
-        "produces": [
-          "application/json",
-          "application/json;odata=none",
-          "application/json;odata=minimal",
-          "application/json;odata=full"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/eventsResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/events/$metadata": {
-      "get": {
-        "operationId": "GetEventsMetadataOData",
-        "summary": "Get OData metadata",
-        "description": "Gets OData EDMX metadata describing the event data model",
-        "x-ms-examples": {
-          "eventMetadata": {
-            "$ref": "examples/events-get-metadata.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          }
-        ],
-        "produces": [
-          "application/xml;charset=utf-8"
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "type": "object"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/query": {
-      "get": {
-        "operationId": "GetQuery",
-        "summary": "Execute an Analytics query",
-        "description": "Executes an Analytics query for data",
-        "x-ms-examples": {
-          "queryGet": {
-            "$ref": "examples/query-get.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/queryParam"
-          },
-          {
-            "$ref": "#/parameters/queryTimespan"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/queryResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      },
-      "post": {
-        "operationId": "Query",
-        "summary": "Execute an Analytics query",
-        "description": "Executes an Analytics query for data. [Here](/documentation/2-Using-the-API/Query) is an example for using POST with an Analytics query.",
-        "x-ms-examples": {
-          "queryPost": {
-            "$ref": "examples/query-post.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          },
-          {
-            "$ref": "#/parameters/queryBody"
-          },
-          {
-            "$ref": "#/parameters/queryTimespan"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "schema": {
-              "$ref": "#/definitions/queryResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    },
-    "/apps/{appId}/query/schema": {
-      "get": {
-        "operationId": "GetQuerySchema",
-        "summary": "Get Analytics query metadata",
-        "description": "Gets Analytics query schema describing the data model",
-        "x-ms-examples": {
-          "querySchema": {
-            "$ref": "examples/query-schema.json"
-          }
-        },
-        "parameters": [
-          {
-            "$ref": "#/parameters/appId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful responses",
-            "schema": {
-              "$ref": "#/definitions/queryResults"
-            }
-          },
-          "default": {
-            "description": "An error response object.",
-            "schema": {
-              "$ref": "#/definitions/errorResponse"
-            }
-          }
-        }
-      }
-    }
-  },
+  "paths": {},
   "parameters": {
     "appId": {
       "name": "appId",
@@ -470,7 +94,11 @@
         "availabilityResults/duration",
         "billing/telemetryCount",
         "customEvents/count"
-      ]
+      ],
+      "x-ms-enum": {
+        "name": "MetricId",
+        "modelAsString": false
+      }
     },
     "metricsTimespan": {
       "name": "timespan",
@@ -479,7 +107,8 @@
       "x-ms-parameter-location": "method",
       "description": "The timespan over which to retrieve metric values. This is an ISO8601 time period value. If timespan is omitted, a default time range of `PT12H` (\"last 12 hours\") is used. The actual timespan that is queried may be adjusted by the server based. In all cases, the actual time span used for the query is included in the response.",
       "type": "string",
-      "format": "duration"
+      "default": "PT12H",
+      "format": "interval"
     },
     "metricsAggregation": {
       "name": "aggregation",
@@ -497,7 +126,11 @@
           "avg",
           "sum",
           "count"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "MetricsAggregation",
+          "modelAsString": true
+        }
       }
     },
     "metricsInterval": {
@@ -535,7 +168,11 @@
           "environment",
           "hostingLocation",
           "instanceName"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "MetricsSegment",
+          "modelAsString": true
+        }
       }
     },
     "metricsTop": {
@@ -610,7 +247,7 @@
       "x-ms-parameter-location": "method",
       "description": "Optional. The timespan over which to retrieve events. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the Odata expression.",
       "type": "string",
-      "format": "duration"
+      "format": "interval"
     },
     "eventsFilter": {
       "name": "$filter",
@@ -685,7 +322,7 @@
       "x-ms-parameter-location": "method",
       "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
       "type": "string",
-      "format": "duration"
+      "format": "interval"
     },
     "queryParam": {
       "name": "query",
@@ -743,12 +380,17 @@
         "availabilityResults/duration",
         "billing/telemetryCount",
         "customEvents/count"
-      ]
+      ],
+      "x-ms-enum": {
+        "name": "MetricId",
+        "modelAsString": false
+      }
     },
     "metricsTimespan": {
       "description": "The timespan over which to retrieve metric values. This is an ISO8601 time period value. If timespan is omitted, a default time range of `PT12H` (\"last 12 hours\") is used. The actual timespan that is queried may be adjusted by the server based. In all cases, the actual time span used for the query is included in the response.",
       "type": "string",
-      "format": "duration"
+      "default": "PT12H",
+      "format": "interval"
     },
     "metricsAggregation": {
       "description": "The aggregation to use when computing the metric values. To retrieve more than one aggregation at a time, separate them with a comma. If no aggregation is specified, then the default aggregation for the metric is used.",
@@ -762,7 +404,11 @@
           "avg",
           "sum",
           "count"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "MetricsAggregation",
+          "modelAsString": true
+        }
       }
     },
     "metricsInterval": {
@@ -793,7 +439,11 @@
           "environment",
           "hostingLocation",
           "instanceName"
-        ]
+        ],
+        "x-ms-enum": {
+          "name": "MetricsSegment",
+          "modelAsString": true
+        }
       }
     },
     "metricsTop": {
@@ -981,7 +631,7 @@
     "eventsTimespan": {
       "description": "Optional. The timespan over which to retrieve events. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the Odata expression.",
       "type": "string",
-      "format": "duration"
+      "format": "interval"
     },
     "eventsFilter": {
       "description": "An expression used to filter the returned events",
@@ -1072,43 +722,7 @@
         },
         "type": {
           "description": "The type of event.",
-          "type": "string",
-          "x-ms-enum": {
-            "name": "EventType",
-            "modelAsString": true,
-            "values": [
-              {
-                "value": "trace"
-              },
-              {
-                "value": "customEvent"
-              },
-              {
-                "value": "pageView"
-              },
-              {
-                "value": "browserTiming"
-              },
-              {
-                "value": "request"
-              },
-              {
-                "value": "dependency"
-              },
-              {
-                "value": "exception"
-              },
-              {
-                "value": "availabilityResult"
-              },
-              {
-                "value": "performanceCounter"
-              },
-              {
-                "value": "customMetric"
-              }
-            ]
-          }
+          "$ref": "#/definitions/eventType"
         },
         "count": {
           "description": "Count of the event",
@@ -1911,17 +1525,10 @@
     "queryTimespan": {
       "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
       "type": "string",
-      "format": "duration"
-    },
-    "applicationsParam": {
-      "description": "Application IDs to include in cross-application queries.",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "format": "interval"
     },
     "queryBody": {
-      "description": "Query request body",
+      "description": "The Analytics query. Learn more about the [Analytics query syntax](https://azure.microsoft.com/documentation/articles/app-insights-analytics-reference/)",
       "type": "object",
       "properties": {
         "query": {
@@ -1931,10 +1538,6 @@
         "timespan": {
           "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
           "$ref": "#/definitions/queryTimespan"
-        },
-        "applications": {
-          "description": "A list of applications that are included in the query.",
-          "$ref": "#/definitions/applicationsParam"
         }
       },
       "required": [
