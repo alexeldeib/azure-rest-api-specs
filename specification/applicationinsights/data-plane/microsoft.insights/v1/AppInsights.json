@@ -284,6 +284,41 @@
       }
     }
   },
+  "post": {
+    "operationId": "Query",
+    "summary": "Execute an Analytics query",
+    "description": "Executes an Analytics query for data. [Here](https://dev.applicationinsights.io/documentation/Using-the-API/Query) is an example for using POST with an Analytics query.",
+    "x-ms-examples": {
+      "queryPost": {
+        "$ref": "examples/query-post.json"
+      }
+    },
+    "parameters": [
+      {
+        "$ref": "#/parameters/appId"
+      },
+      {
+        "$ref": "#/parameters/queryBody"
+      },
+      {
+        "$ref": "#/parameters/queryTimespan"
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Successful response",
+        "schema": {
+          "$ref": "#/definitions/queryResults"
+        }
+      },
+      "default": {
+        "description": "An error response object.",
+        "schema": {
+          "$ref": "#/definitions/errorResponse"
+        }
+      }
+    }
+  },
   "parameters": {
     "appId": {
       "name": "appId",
