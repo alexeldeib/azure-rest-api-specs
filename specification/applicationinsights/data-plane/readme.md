@@ -51,7 +51,7 @@ Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azur
 csharp:
   license-header: MICROSOFT_MIT_NO_VERSION
   namespace: Microsoft.Azure.ApplicationInsights
-  output-folder: $(csharp-sdks-folder)/ApplicationInsights/Data.ApplicationInsights/Generated
+  output-folder: $(csharp-sdks-folder)/ApplicationInsights/DataPlane/ApplicationInsights/Generated
   clear-output-folder: true
   payload-flattening-threshold: 3
 directive:
