@@ -45,7 +45,7 @@
     }
   ],
   "paths": {
-    "/workspaces/{workspace-id}/query": {
+    "/workspaces/{workspaceId}/query": {
       "get": {
         "operationId": "Query_Get",
         "summary": "Execute an Analytics query",
@@ -179,10 +179,6 @@
         "timespan": {
           "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
           "$ref": "#/definitions/timespanParam"
-        },
-        "workspaces": {
-          "description": "A list of workspaces that are included in the query.",
-          "$ref": "#/definitions/workspacesParam"
         }
       },
       "required": [
