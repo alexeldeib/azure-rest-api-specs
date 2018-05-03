@@ -152,7 +152,7 @@
       "name": "timespan",
       "in": "query",
       "required": false,
-      "format": "interval",
+      "format": "duration",
       "x-ms-parameter-location": "method",
       "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
       "type": "string"
@@ -165,8 +165,7 @@
     },
     "timespanParam": {
       "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
-      "type": "string",
-      "format": "interval"
+      "type": "string"
     },
     "queryBody": {
       "description": "The Analytics query. Learn more about the [Analytics query syntax](https://azure.microsoft.com/documentation/articles/app-insights-analytics-reference/)",
