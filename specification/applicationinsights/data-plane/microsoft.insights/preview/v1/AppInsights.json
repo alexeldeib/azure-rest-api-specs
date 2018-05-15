@@ -595,6 +595,7 @@
     "applicationsParam": {
       "name": "applications",
       "in": "query",
+      "collectionFormat": "csv",
       "required": false,
       "default": "",
       "description": "Application IDs to include in cross-application queries.",
