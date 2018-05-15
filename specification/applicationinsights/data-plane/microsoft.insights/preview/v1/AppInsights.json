@@ -390,7 +390,6 @@
     "metricsAggregation": {
       "name": "aggregation",
       "in": "query",
-      "collectionFormat": "csv",
       "x-ms-parameter-location": "method",
       "description": "The aggregation to use when computing the metric values. To retrieve more than one aggregation at a time, separate them with a comma. If no aggregation is specified, then the default aggregation for the metric is used.",
       "type": "array",
@@ -426,7 +425,6 @@
       "description": "The name of the dimension to segment the metric values by. This dimension must be applicable to the metric you are retrieving. To segment by more than one dimension at a time, separate them with a comma (,). In this case, the metric data will be segmented in the order the dimensions are listed in the parameter.",
       "type": "array",
       "minItems": 1,
-      "collectionFormat": "csv",
       "items": {
         "type": "string",
         "enum": [
@@ -599,7 +597,6 @@
       "default": "",
       "description": "Application IDs to include in cross-application queries.",
       "type": "array",
-      "collectionFormat": "csv",
       "items": {
         "type": "string"
       }
@@ -707,7 +704,6 @@
       "description": "The name of the dimension to segment the metric values by. This dimension must be applicable to the metric you are retrieving. To segment by more than one dimension at a time, separate them with a comma (,). In this case, the metric data will be segmented in the order the dimensions are listed in the parameter.",
       "type": "array",
       "minItems": 1,
-      "collectionFormat": "csv",
       "items": {
         "type": "string",
         "enum": [
@@ -1816,7 +1812,6 @@
     "applicationsParam": {
       "description": "Application IDs to include in cross-application queries.",
       "type": "array",
-      "collectionFormat": "csv",
       "items": {
         "type": "string"
       }
