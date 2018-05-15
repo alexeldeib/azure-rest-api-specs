@@ -28,6 +28,7 @@ title: ApplicationInsightsDataClient
 description: Composite Swagger for Application Insights Data Client
 add-credentials: true
 openapi-type: data-plane
+tag: v1
 ```
 
 ### Tag: v1
