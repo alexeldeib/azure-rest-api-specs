@@ -44,6 +44,8 @@ directive:
   - reason: Rename Query_Post to Query so that we don't get an IQuery interface with 1 operation
     where-operation: Query_Post
     transform: $.operationId = "Query"
+  - reason: Remove parameter only used in removed operation.
+    remove-parameter: workspacesParam
 ```
 
 ---
@@ -74,29 +76,6 @@ csharp:
   output-folder: $(csharp-sdks-folder)/OperationalInsights/DataPlane/OperationalInsights/Generated
   clear-output-folder: true
   payload-flattening-threshold: 3
-```
-
-``` yaml $(python)
-python-mode: create
-python:
-  add-credentials: true
-  license-header: MICROSOFT_MIT_NO_VERSION
-  payload-flattening-threshold: 2
-  namespace: azure.operationalinsights
-  package-name: azure-operationalinsights
-  package-version: 0.1.0
-  clear-output-folder: true
-  basic-setup-py: true
-```
-``` yaml $(python) && $(python-mode) == 'update'
-python:
-  no-namespace-folders: true
-  output-folder: $(python-sdks-folder)/azure-operationalinsights/azure/operationalinsights
-```
-``` yaml $(python) && $(python-mode) == 'create'
-python:
-  basic-setup-py: true
-  output-folder: $(python-sdks-folder)/azure-operationalinsights
 ```
 
 ``` yaml $(python)

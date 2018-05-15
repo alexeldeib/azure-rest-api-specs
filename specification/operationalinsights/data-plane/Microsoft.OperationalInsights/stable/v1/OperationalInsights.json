@@ -140,6 +140,7 @@
       "name": "workspaces",
       "description": "Comma separated workspace IDs to include in cross-workspace queries.",
       "in": "query",
+      "x-ms-parameter-location": "method",
       "collectionFormat": "csv",
       "required": false,
       "default": "",
