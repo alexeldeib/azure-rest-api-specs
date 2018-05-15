@@ -37,6 +37,12 @@ These settings apply only when `--tag=v1` is specified on the command line.
 ``` yaml $(tag) == 'v1'
 input-file:
 - microsoft.insights/preview/v1/AppInsights.json
+directive:
+  - reason: Don't expose the GET endpoint since it's behavior is more limited than POST
+    remove-operation: Query_Get
+  - reason: Rename Query_Post to Query so that we don't get an IQuery interface with 1 operation
+    where-operation: Query_Post
+    transform: $.operationId = "Query"
 ```
 
 
@@ -63,7 +69,7 @@ Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azur
 csharp:
   license-header: MICROSOFT_MIT_NO_VERSION
   namespace: Microsoft.Azure.ApplicationInsights
-  output-folder: $(csharp-sdks-folder)/ApplicationInsights/Data.ApplicationInsights/Generated
+  output-folder: $(csharp-sdks-folder)/ApplicationInsights/DataPlane/ApplicationInsights/Generated
   clear-output-folder: true
   payload-flattening-threshold: 3
 directive:
