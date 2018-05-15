@@ -105,9 +105,6 @@
           },
           {
             "$ref": "#/parameters/queryBody"
-          },
-          {
-            "$ref": "#/parameters/workspacesParam"
           }
         ],
         "responses": {

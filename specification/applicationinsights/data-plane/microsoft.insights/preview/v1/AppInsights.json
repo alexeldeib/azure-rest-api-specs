@@ -299,12 +299,6 @@
           },
           {
             "$ref": "#/parameters/queryBody"
-          },
-          {
-            "$ref": "#/parameters/queryTimespan"
-          },
-          {
-            "$ref": "#/parameters/applicationsParam"
           }
         ],
         "responses": {
@@ -1830,6 +1824,10 @@
         "timespan": {
           "description": "Optional. The timespan over which to query data. This is an ISO8601 time period value.  This timespan is applied in addition to any that are specified in the query expression.",
           "$ref": "#/definitions/queryTimespan"
+        },
+        "applications": {
+          "description": "A list of Application IDs for cross-application queries.",
+          "$ref": "#/definitions/applicationsParam"
         }
       },
       "required": [
