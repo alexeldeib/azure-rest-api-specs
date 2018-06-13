@@ -139,8 +139,6 @@ Please also specify `--azure-libraries-for-java-folder=<path to the root directo
 
 ``` yaml $(java)
 java:
-  title: OperationalInsightsDataClient
-  description: Operational Insights Data Client
   azure-arm: true
   fluent: true
   namespace: com.microsoft.azure.operationalinsights
