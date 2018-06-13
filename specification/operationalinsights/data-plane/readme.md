@@ -24,8 +24,8 @@ To see additional help and options, run:
 These are the global settings for the OperationalInsightsData API.
 
 ``` yaml
-title: LogAnalyticsDataClient
-description: Log Analytics Data Client
+title: OperationalInsightsDataClient
+description: Operational Insights Data Client
 add-credentials: true
 openapi-type: data-plane
 tag: v1
@@ -76,8 +76,6 @@ Please also specify `--csharp-sdks-folder=<path to "SDKs" directory of your azur
 
 ```yaml $(csharp)
 csharp:
-  title: OperationalInsightsDataClient
-  description: Operational Insights Data Client
   namespace: Microsoft.Azure.OperationalInsights
   output-folder: $(csharp-sdks-folder)/OperationalInsights/DataPlane/OperationalInsights/Generated
   clear-output-folder: true
@@ -87,6 +85,9 @@ csharp:
 ``` yaml $(python)
 python-mode: create
 python:
+  title: LogAnalyticsDataClient
+  description: Log Analytics Data Client
+  override-client-name: LogAnalyticsDataClient
   license-header: MICROSOFT_MIT_NO_VERSION
   payload-flattening-threshold: 2
   namespace: azure.loganalytics
@@ -111,8 +112,6 @@ These settings apply only when `--go` is specified on the command line.
 
 ``` yaml $(go)
 go:
-  title: OperationalInsightsDataClient
-  description: Operational Insights Data Client
   license-header: MICROSOFT_APACHE_NO_VERSION
   clear-output-folder: true
   namespace: operationalinsights
