@@ -25,7 +25,6 @@ These are the global settings for the OperationalInsightsData API.
 
 ``` yaml
 title: OperationalInsightsDataClient
-description: Operational Insights Data Client
 add-credentials: true
 openapi-type: data-plane
 tag: v1
@@ -86,7 +85,6 @@ csharp:
 python-mode: create
 python:
   title: LogAnalyticsDataClient
-  description: Log Analytics Data Client
   override-client-name: LogAnalyticsDataClient
   license-header: MICROSOFT_MIT_NO_VERSION
   payload-flattening-threshold: 2
