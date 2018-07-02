@@ -80,11 +80,16 @@ csharp:
   output-folder: $(csharp-sdks-folder)/OperationalInsights/DataPlane/OperationalInsights/Generated
   clear-output-folder: true
   payload-flattening-threshold: 3
+directive:
+  - from: swagger-document
+    where: $.definitions.table.properties.rows.items.items.type
+    transform: $ = "object"
 ```
 
 ``` yaml $(python)
 python-mode: create
 python:
+  override-client-name: LogAnalyticsDataClient
   license-header: MICROSOFT_MIT_NO_VERSION
   payload-flattening-threshold: 2
   namespace: azure.loganalytics
