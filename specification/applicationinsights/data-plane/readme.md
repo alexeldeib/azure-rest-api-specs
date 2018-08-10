@@ -163,4 +163,6 @@ directive:
   - from: swagger-document
     where: $.definitions.table.properties.rows.items.items.type
     transform: $ = "object"
+  - reason: Remove Events_GetOdataMetadata from Java SDK because no XML deseralization exists. 
+    remove-operation: Events_GetOdataMetadata
   ```
